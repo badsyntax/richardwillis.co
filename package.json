@@ -1,5 +1,7 @@
 {
   "name": "richardwillis.co",
+  "private": true,
+  "repository": "https://github.com/badsyntax/richardwillis.co",
   "version": "1.0.0",
   "description": "Richard Willis personal site",
   "main": "index.js",
@@ -7,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1",
+    "start": "http-server -a 0.0.0.0 -p 8000 -c-1",
     "watch": "compass watch"
   },
   "devDependencies": {
