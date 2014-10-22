@@ -1,0 +1,14 @@
+ul {
+  margin-bottom: 20px;
+  ul {
+    margin-bottom: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  list-style-type: disc;
+  margin: 2px 0 2px 20px;
+}

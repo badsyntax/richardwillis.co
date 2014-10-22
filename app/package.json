@@ -1,0 +1,16 @@
+{
+  "name": "richardwillis.co",
+  "version": "1.0.0",
+  "description": "Richard Willis personal site",
+  "main": "index.js",
+  "author": "Richard Willis",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
+    "watch": "compass watch"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.2"
+  }
+}
