@@ -16,6 +16,5 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "~2.1.3"
   }
 }
