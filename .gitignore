@@ -5,3 +5,4 @@ npm-debug.log
 supervisord.log
 supervisord.pid
 public/components
+public/css
