@@ -1,0 +1,21 @@
+{
+  "name": "richardwillis.co",
+  "version": "0.0.0",
+  "homepage": "https://github.com/badsyntax/richardwillis.co",
+  "authors": [
+    "Richard <willis.rh@gmail.com>"
+  ],
+  "description": "Personal site of Richard Willis",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.1.3"
+  }
+}
