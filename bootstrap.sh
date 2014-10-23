@@ -15,10 +15,10 @@ apt-get install -y python-software-properties
 add-apt-repository ppa:chris-lea/node.js && apt-get update
 apt-get install -y supervisor build-essential nodejs ruby-dev
 
-gem install --no-ri --no-rdoc sass compass
+gem install --no-ri --no-rdoc bundler
 
 # Install app dependencies
-cd /var/www && npm install
+cd /var/www && npm install && bundle install
 
 # Start services
 supervisord -c /var/www/supervisord.conf
