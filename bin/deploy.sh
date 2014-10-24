@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# deploy-and-build.sh - Deploy and build the application
+# deploy.sh - Deploy the application
 
 readonly ENV="$1"
 
