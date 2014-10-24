@@ -10,8 +10,8 @@
   "scripts": {
     "prestart": "npm install",
     "start": "http-server -a 0.0.0.0 -p 8000 -c-1",
-    "watch": "compass watch -c config/compass.rb",
-    "compile": "compass compile -c config/compass.rb",
+    "watch": "bundle exec compass watch -c config/compass.rb",
+    "compile": "bundle exec compass compile -c config/compass.rb",
     "build": "npm run compile"
   },
   "devDependencies": {

@@ -8,9 +8,6 @@ set :repo_url, 'git@github.com:badsyntax/richardwillis.co.git'
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 # set :branch, 'master'
 
-# Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/var/www'
-
 set :ssh_options, {
   port: 2234
 }
@@ -48,6 +45,15 @@ namespace :deploy do
         info "#{fetch(:deploy_to)} is writable on #{host}"
       else
         error "#{fetch(:deploy_to)} is not writable on #{host}"
+      end
+    end
+  end
+
+  desc "Build the project files"
+  task :build do
+    on roles(:all) do |host|
+      within release_path do
+        execute "npm", "run", "build"
       end
     end
   end

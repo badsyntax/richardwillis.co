@@ -6,6 +6,11 @@
 
 role :web, %w{deploy@richardwillis.co}
 
+set :environment, :staging
+
+set :deploy_to, "/var/www/#{fetch(:environment)}"
+
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
