@@ -8,6 +8,8 @@ role :web, %w{deploy@richardwillis.co}
 
 set :environment, :staging
 
+set :branch, :develop
+
 set :deploy_to, "/var/www/#{fetch(:environment)}"
 
 

@@ -5,7 +5,7 @@ set :application, 'richardwillis.co'
 set :repo_url, 'git@github.com:badsyntax/richardwillis.co.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 # set :branch, 'master'
 
 set :ssh_options, {
