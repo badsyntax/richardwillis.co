@@ -1,12 +1,14 @@
 @import "settings";
 
 @import "compass";
-@import "normalize";
+// @import "normalize";
 @import "susy";
 @import "breakpoint";
 
-@import "components/helpers";
+@include layout($susy);
+
 @import "components/base";
+@import "components/helpers";
 @import "components/type";
 @import "components/lists";
 @import "components/boxes";

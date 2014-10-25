@@ -1,8 +1,15 @@
+.container {
+  @include container(900px center);
+  margin-top: 0;
+  margin-bottom: gutter() * 2;
+}
+
 .box {
   background: #1A1B59;
-  margin: 0 auto 20px auto;
   color: #A8A9CC;
-  padding: 20px;
+  margin-left: gutter() * 2;
+  margin-right: gutter() * 2;
+  padding: gutter() * 2;
   .read-more {
     background: #0A0C39;
     margin: 0 -20px -20px -20px;
@@ -10,8 +17,22 @@
   }
 }
 
-.container {
-  @include pie-clearfix;
-  max-width: 900px;
-  margin: 0 auto 20px auto;
+.features {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 0;
+    @include span(1 of 5);
+    a {
+      display: block;
+      padding: gutter() * 2;
+      span {
+        display:inline-block;
+        vertical-align:middle;
+      }
+      background: #1A1B59;
+      height: 100px;
+    }
+  }
 }
