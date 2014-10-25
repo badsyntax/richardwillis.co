@@ -14,7 +14,7 @@ do
   cd ..
 done
 
-cap "$ENV" deploy
+bundle install --path vendor/bundle && bundler exec cap "$ENV" deploy
 
 if [ $? -ne 0 ]; then
   echo "There was an error deploying the application, exiting."
