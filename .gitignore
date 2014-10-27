@@ -2,7 +2,5 @@ node_modules
 npm-debug.log
 .vagrant
 .sass-cache
-supervisord.log
-supervisord.pid
 public/components
 public/css
