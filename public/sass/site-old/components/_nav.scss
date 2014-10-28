@@ -1,8 +1,10 @@
 .nav {
   background: #0A0C39;
-  margin-bottom: gutter() * 2;
+  margin-bottom: $app-margin;
   ul {
-    padding: gutter() * 2;
+    padding: $app-margin;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   li {
     float: left;

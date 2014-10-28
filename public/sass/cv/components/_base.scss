@@ -1,0 +1,9 @@
+@include border-box-sizing;
+
+body {
+  background: $body-bg;
+  margin: 0;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  color: $base-font-color;
+}

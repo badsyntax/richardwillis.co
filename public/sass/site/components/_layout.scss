@@ -1,0 +1,67 @@
+.container {
+  @include container(960px);
+  @include box-shadow(0 1px 3px #000);
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 10px 60px;
+  background: #f5f5f5;
+  border: solid #666;
+  border-width: 8px 0 2px 0;
+}
+
+.section {
+  // page-break-inside: avoid;
+  @include clearfix;
+  @include trailer(1, $base-font-size, padding);
+  @include leader(1, $base-font-size, padding);
+  border-top: 1px solid #ccc;
+  #{headings(5)} {
+    @include leader(0);
+  }
+  .content-block {
+    p {
+      @include adjust-font-size-to($base-font-size * 1.2, 1.2);
+      margin-bottom: pxToRem($base-font-size * 1.2);
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .header {
+      @include clearfix;
+    }
+  }
+  &.skills, &.frameworks {
+    .content-block {
+      @include span(3 of 12);
+      &:last-child {
+        @include span(3 of 12 last);
+      }
+    }
+  }
+  &.list {
+    .content-block {
+      @include trailer(1.2, $base-font-size, padding);
+      @include trailer(1.2, $base-font-size, margin);
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .header {
+        margin: 0;
+        padding: 0;
+      }
+      .job-company-title {
+        @include span(8 of 12);
+      }
+      .date {
+        @include span(4 of 12 last);
+        text-align: right;
+      }
+    }
+  }
+}

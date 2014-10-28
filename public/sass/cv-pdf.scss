@@ -1,0 +1,20 @@
+@import "cv/settings";
+
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "cv/functions";
+
+body {
+  background: #fff;
+  margin: 0;
+}
+
+.container {
+  @include box-shadow(none);
+  @include container(100%);
+  margin-top: 0;
+  margin-bottom: 0;
+  background: #ffffff;
+  border: 0;
+}

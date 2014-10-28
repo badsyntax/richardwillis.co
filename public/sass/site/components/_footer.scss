@@ -1,0 +1,8 @@
+.footer {
+  p {
+    text-align: center;
+    @include adjust-font-size-to($base-font-size, 1.2);
+    @include trailer(0.5, $base-font-size, margin);
+    @include leader(0.5, $base-font-size, margin);
+  }
+}

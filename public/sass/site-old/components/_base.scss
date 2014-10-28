@@ -1,0 +1,10 @@
+@include establish-baseline;
+@include border-box-sizing;
+
+body {
+  background: $app-body-bg;
+  margin: 0;
+  font-family: $app-base-font-family;
+  font-weight: $app-base-font-weight;
+  color: $app-base-font-color;
+}

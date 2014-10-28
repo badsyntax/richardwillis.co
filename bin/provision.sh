@@ -6,12 +6,14 @@
 sed -i "s/\/\/archive.ubuntu.com/\/\/gb.archive.ubuntu.com/g" /etc/apt/sources.list
 
 # echo "Updating system..."
-apt-get update
+apt-get update && apt-get upgrade -y
 
 echo "Installing packages..."
+apt-get remove -y ruby1.8
 apt-get install -y python-software-properties
 add-apt-repository ppa:chris-lea/node.js -y && apt-get update
-apt-get install -y git supervisor build-essential nodejs ruby-dev
+apt-get install -y git supervisor build-essential nodejs ruby1.9.3
+apt-get autoremove -y
 gem install --no-ri --no-rdoc bundler
 
 cd /var/www

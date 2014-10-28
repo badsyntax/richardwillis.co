@@ -1,0 +1,15 @@
+.header {
+  @include clearfix;
+  h1 {
+    letter-spacing: pxToRem(3px);
+    a {
+      text-decoration: none;
+    }
+  }
+  h2 {
+    letter-spacing: pxToRem(2px);
+  }
+  @include leader(1, $base-font-size, margin);
+  @include trailer(1, $base-font-size, margin);
+  @include trailer(1, $base-font-size, padding);
+}
