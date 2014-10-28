@@ -10,7 +10,6 @@
 }
 
 .section {
-  // page-break-inside: avoid;
   @include clearfix;
   @include trailer(1.5, $base-font-size, padding);
   @include leader(1.5, $base-font-size, padding);
@@ -24,7 +23,6 @@
     @include trailer(0);
   }
   .content-block {
-    // page-break-inside: avoid;
     @include span(9 of 12 last);
     h3 {
       @include adjust-font-size-to($h3-font-size, 1.2);

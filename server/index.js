@@ -9,8 +9,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+// Setup view helpers
+var helpers = require('express-helpers')();
+for(var key in helpers) {
+  if (typeof helpers[key] === 'function') {
+    app.locals[key] = helpers[key];
+  }
+}
 
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/', routes);
 
 var server = app.listen(config.get('port'), function() {

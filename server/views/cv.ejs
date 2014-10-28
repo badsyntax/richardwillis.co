@@ -19,8 +19,8 @@
           <h2>Freelance Web Developer</h2>
         </div>
         <ul class="contact">
-          <li><a href="mailto:richard@proxima-web.com">richard@proxima-web.com</a></li>
-          <li><a href="http://richardwillis.co">richardwillis.co</a></li>
+          <li><%- link_to_if(showLinks, 'richard@proxima-web.com', 'mailto:richard@proxima-web.com') %></li>
+          <li><%- link_to_if(showLinks, 'richardwillis.co', 'http://richardwillis.co') %></li>
           <li>07954216809</li>
           <li>London, UK</li>
         </ul>
@@ -250,7 +250,7 @@
               <h4>Data Capturer / Content Editor</h4>
             </div>
             <div class="date">
-              <h5>January 2002 – January 2003 (1 year)</h5>
+              <h5>January 2002 – January 2003</h5>
             </div>
           </header>
           <p>
@@ -309,17 +309,17 @@
         <h2>Showcase / Links</h2>
         <div class="content-block">
           <h3>Work / Portfolio</h3>
-          <p>View my <a href="#">personal website</a> for examples of work I've done.</p>
+          <p>View my <a href="http://richardwillis.co">personal website</a> for examples of work I've done.</p>
           <h3>Online Profiles:</h3>
           <ul>
             <li>
               <a href="http://github.com/badsyntax">GitHub profile</a>
             </li>
             <li>
-              <a href="http://stackoverflow.com/users/492325/badsyntax">StackOverflow profile</a>.
+              <a href="http://stackoverflow.com/users/492325/badsyntax">StackOverflow profile</a>
             </li>
             <li>
-              <a href="http://uk.linkedin.com/in/b4d5ynt4x/">LinkedIn profile</a>
+              <a href="http://uk.linkedin.com/in/b4d5ynt4x">LinkedIn profile</a>
             </li>
           </ul>
         </div>
@@ -329,10 +329,10 @@
         <div class="content-block">
           <p>I enjoy keeping active and appreciated my time away from the computer.</p>
           <ul>
-            <li><a href="#">Cycling</a></li>
-            <li><a href="#">Climbing / Bouldering</a></li>
-            <li><a href="#">Walking / Hiking</a></li>
-            <li><a href="#">Exploring</a></li>
+            <li>Cycling</li>
+            <li>Climbing / Bouldering</li>
+            <li>Walking / Hiking</li>
+            <li>Exploring</li>
             <li>Programming</li>
           </ul>
         </div>
@@ -340,8 +340,9 @@
       <footer class="section footer">
         <p>
           Richard Willis -
-          <a href="mailto:richard@proxima-web.com">richard@proxima-web.com</a> -
-          <a href="http://richardwillis.co">richardwillis.co</a> - 07954216809
+          <%- link_to_if(showLinks, 'richard@proxima-web.com', 'mailto:richard@proxima-web.com') %> -
+          <%- link_to_if(showLinks, 'richardwillis.co', 'http://richardwillis.co') %> -
+          07954216809
         </p>
         <p>Last Updated: </p>
       </footer>

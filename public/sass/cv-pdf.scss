@@ -12,9 +12,15 @@ body {
 
 .container {
   @include box-shadow(none);
-  @include container(100%);
-  margin-top: 0;
-  margin-bottom: 0;
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
   background: #ffffff;
   border: 0;
+}
+
+a[href] {
+  color: $base-font-color;
+  text-decoration: none;
 }
