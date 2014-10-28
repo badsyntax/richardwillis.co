@@ -20,19 +20,17 @@ apt-get install -y python-software-properties
 add-apt-repository -y "deb http://gb.archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe multiverse"
 
 add-apt-repository -y ppa:chris-lea/node.js && apt-get update
-apt-get install -y git supervisor build-essential nodejs ruby1.9.3 ttf-mscorefonts-installer
+apt-get install -y git python-setuptools build-essential nodejs ruby1.9.3 ttf-mscorefonts-installer
 apt-get autoremove -y
+easy_install supervisor
 gem install --no-ri --no-rdoc bundler
 
-cd /var/www
-
 echo "Installing project packages..."
+cd /var/www
 bundle install && npm install
 
 echo "Setting up services..."
-ln -s /var/www/supervisord.conf /etc/supervisor/conf.d/richardwillis.co.conf
-service supervisor stop
-service supervisor start
+./bin/services-start.sh
 
 echo "Building project..."
 npm run build
