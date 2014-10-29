@@ -10,6 +10,8 @@ set :environment, :production
 
 set :branch, :master
 
+set :start_script, "start"
+
 set :deploy_to, "/var/www/#{fetch(:environment)}"
 
 # Extended Server Syntax

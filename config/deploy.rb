@@ -53,7 +53,7 @@ namespace :deploy do
   task :restart do
     on roles(:all), in: :sequence do |host|
       within release_path do
-        execute "npm", "run", "start"
+        execute "npm", "run", "#{fetch(:start_script)}"
       end
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
