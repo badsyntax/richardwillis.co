@@ -11,6 +11,7 @@
     "prestart": "npm install",
     "prestart-dev": "npm install",
     "start": "NODE_ENV=production node server",
+    "start-staging": "NODE_ENV=staging node server",
     "start-dev": "NODE_ENV=development node server",
     "pdf": "phantomjs server/tools/generate-pdf.js",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",

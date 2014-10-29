@@ -25,6 +25,7 @@ Once the VM is created and ready to use, ssh into the machine and start the watc
 vagrant ssh
 cd /var/www
 npm run watch
+npm run start-staging # to start the staging instance
 npm run start-dev # to start the dev instance
 npm run start # to start the prod instance
 ```
@@ -32,11 +33,12 @@ npm run start # to start the prod instance
 Adjust the hostnames to point to the VM:
 
 ```
-echo "192.168.50.4 richardwillis.co.local staging.richardwillis.co.local" | sudo tee --append /etc/hosts
+echo "192.168.50.4 richardwillis.co.local staging.richardwillis.co.local dev.richardwillis.co.local" | sudo tee --append /etc/hosts
 ```
 
-* Navigate to http://staging.richardwillis.co.local/ to view the application in dev mode.
-* Navigate to http://richardwillis.co.local to view the application in prod mode.
+* Navigate to http://dev.richardwillis.co.local/ to view the application in dev mode.
+* Navigate to http://staging.richardwillis.co.local/ to view the application in staging mode.
+* Navigate to http://richardwillis.co.local/ to view the application in prod mode.
 
 If you run `vagrant halt && vagrant up` then you'll need to manually restart
 supervisor.
