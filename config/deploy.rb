@@ -49,6 +49,19 @@ namespace :deploy do
     end
   end
 
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do |host|
+      within release_path do
+        execute "bin/services-restart.sh", "#{fetch(:environment)}"
+      end
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :deploy, :restart
+
   desc "Build the project files"
   task :build do
     on roles(:all) do |host|
@@ -58,21 +71,7 @@ namespace :deploy do
     end
   end
 
-  after :deploy, :build
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do |host|
-      within release_path do
-        execute "bin/services-stop.sh", "#{fetch(:environment)}"
-        execute "bin/services-start.sh", "#{fetch(:environment)}"
-      end
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
-
-  after :publishing, :restart
+  after :restart, :build
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

@@ -8,7 +8,6 @@
   "author": "Richard Willis",
   "license": "MIT",
   "scripts": {
-    "preinstall": "bundle install --path vendor/bundle",
     "prestart": "npm install",
     "prestart-dev": "npm install",
     "prebuild": "npm install",
