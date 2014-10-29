@@ -51,9 +51,8 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do |host|
+    on roles(:all), in: :sequence do |host|
       within release_path do
-        execute "npm", "run", "stop"
         execute "npm", "run", "start"
       end
       # Your restart mechanism here, for example:
