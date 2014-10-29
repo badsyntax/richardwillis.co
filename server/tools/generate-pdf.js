@@ -3,6 +3,10 @@
 
 'use strict';
 
+var system = require('system');
+var args = system.args;
+var port = args[1];
+
 var webPage = require('webpage');
 var page = webPage.create();
 
@@ -53,7 +57,7 @@ page.paperSize = {
   }
 };
 
-page.open('http://localhost:8000/cv/pdf', function open(status) {
+page.open('http://localhost:'+port+'/cv/pdf', function open(status) {
 
   if (status !== 'success') {
     console.error('Unable to open page for PDF generation! Perhaps node server has not started?');

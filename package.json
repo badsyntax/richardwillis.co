@@ -18,10 +18,12 @@
     "start-dev": "NODE_ENV=development forever start server/index.js",
     "restart": "forever restartAll",
     "stop": "forever stopall || true",
-    "pdf": "phantomjs server/tools/generate-pdf.js",
+    "pdf": "phantomjs server/tools/generate-pdf.js 8000",
+    "pdf-staging": "phantomjs server/tools/generate-pdf.js 8001",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",
     "compile": "bundle exec compass compile -c config/compass.rb",
-    "build": "npm run compile && npm run pdf"
+    "build": "npm run compile && npm run pdf",
+    "build-staging": "npm run compile && npm run pdf-staging"
   },
   "devDependencies": {
   },

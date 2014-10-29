@@ -7,10 +7,9 @@
 role :web, %w{deploy@richardwillis.co}
 
 set :environment, :staging
-
 set :branch, :develop
 set :start_script, "start-staging"
-
+set :build_script, "build-staging"
 set :deploy_to, "/var/www/#{fetch(:environment)}"
 
 

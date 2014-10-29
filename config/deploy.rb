@@ -66,7 +66,7 @@ namespace :deploy do
   task :build do
     on roles(:all) do |host|
       within release_path do
-        execute "npm", "run", "build"
+        execute "npm", "run", "#{fetch(:build_script)}"
       end
     end
   end

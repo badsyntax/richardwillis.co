@@ -7,11 +7,9 @@
 role :web, %w{deploy@richardwillis.co}
 
 set :environment, :production
-
 set :branch, :master
-
 set :start_script, "start"
-
+set :build_script, "build"
 set :deploy_to, "/var/www/#{fetch(:environment)}"
 
 # Extended Server Syntax
