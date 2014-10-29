@@ -16,7 +16,7 @@
     "start-staging": "NODE_ENV=staging forever start server/index.js",
     "start-dev": "NODE_ENV=development forever start server/index.js",
     "restart": "forever restartAll",
-    "stop": "forever stopall",
+    "stop": "forever stopall || true",
     "pdf": "phantomjs server/tools/generate-pdf.js",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",
     "compile": "bundle exec compass compile -c config/compass.rb",
