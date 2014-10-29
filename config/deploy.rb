@@ -53,7 +53,8 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do |host|
       within release_path do
-        execute "bin/services-restart.sh", "#{fetch(:environment)}"
+        execute "npm", "run", "stop"
+        execute "npm", "run", "start"
       end
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')

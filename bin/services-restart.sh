@@ -8,6 +8,7 @@ if [ "$ENV" != "staging" ] && [ "$ENV" != "production" ]; then
   exit 1
 fi
 
-echo "Stopping services..."
+echo "Restarting services..."
+supervisord -c "/var/www/staging/current/config/supervisord.conf"
 supervisorctl -c "/var/www/$ENV/current/config/supervisord.conf" restart all
 echo "Done."
