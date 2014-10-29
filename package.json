@@ -9,23 +9,24 @@
   "license": "MIT",
   "scripts": {
     "prestart": "npm install",
-    "start": "node server",
-    "start-dev": "node server",
-    "pdf": "phantomjs pdf.js",
+    "prestart-dev": "npm install",
+    "start": "NODE_ENV=production node server",
+    "start-dev": "NODE_ENV=development node server",
+    "pdf": "phantomjs server/tools/generate-pdf.js",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",
     "compile": "bundle exec compass compile -c config/compass.rb",
     "build": "npm run compile && npm run pdf"
   },
   "devDependencies": {
-    "bower": "^1.3.12",
-    "http-server": "^0.7.2",
-    "nodemon": "^1.2.1",
-    "phantomjs": "^1.9.12"
+    "bower": "^1.3.12"
   },
   "dependencies": {
     "ejs": "^1.0.0",
     "express": "^4.10.0",
     "express-helpers": "^1.3.1",
-    "nconf": "^0.6.9"
+    "lodash": "^2.4.1",
+    "moment": "^2.8.3",
+    "nconf": "^0.6.9",
+    "phantomjs": "^1.9.12"
   }
 }

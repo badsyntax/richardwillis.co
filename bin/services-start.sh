@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # services-start.sh - Start all application services
 
-supervisord -c /var/www/supervisord.conf
+echo "Starting services..."
+supervisord -c /var/www/config/supervisord.conf
+echo "Done."

@@ -1,7 +1,7 @@
 var path = require('path');
 var express = require('express');
 
-var config = require(path.join(__dirname, 'config'));
+var config = require('./config');
 var routes = require('./routes');
 var app = express();
 
@@ -11,13 +11,12 @@ app.set('view engine', 'ejs');
 
 // Setup view helpers
 var helpers = require('express-helpers')();
-for(var key in helpers) {
+Object.keys(helpers).forEach(function(key) {
   if (typeof helpers[key] === 'function') {
     app.locals[key] = helpers[key];
   }
-}
+});
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/', routes);
 
 var server = app.listen(config.get('port'), function() {

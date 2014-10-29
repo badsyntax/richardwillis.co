@@ -1,0 +1,31 @@
+.nav {
+  @include trailer(1, $base-font-size, margin);
+  @include trailer(1, $base-font-size, padding);
+  @include leader(1, $base-font-size, padding);
+  border-top: 1px solid #ccc;
+  ul {
+    @include clearfix;
+    padding: 0;
+  }
+  li {
+    @include span(1 of 2);
+    list-style: none;
+    padding: 0;
+    &:last-child {
+      @include span(1 of 2 last);
+    }
+  }
+  a {
+    @include adjust-font-size-to($base-font-size * 1.5, 1.8);
+    border: 2px solid #666;
+    display: block;
+    padding: $base-font-size;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      background: #eee;
+      border-color: #000;
+    }
+  }
+}

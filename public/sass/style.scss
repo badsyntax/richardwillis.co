@@ -1,14 +1,16 @@
-@import "site/settings";
+@import "settings";
 
 @import "compass";
 @import "susy";
 @import "breakpoint";
-// @import "site/func";
+@import "functions";
 
-@import "site/normalize";
-@import "site/components/base";
-@import "site/components/type";
-@import "site/components/lists";
-@import "site/components/header";
-@import "site/components/layout";
-@import "site/components/footer";
+@import "normalize";
+@import "components/base";
+@import "components/type";
+@import "components/lists";
+@import "components/header";
+@import "components/nav";
+@import "components/layout";
+@import "components/footer";
+@import "components/print";

@@ -1,0 +1,31 @@
+.header {
+  @include clearfix;
+  .title {
+    @include span(8 of 12);
+  }
+  .contact {
+    @include span(4 of 12 last);
+    @include leader(0.8, $base-font-size, margin);
+    padding: 0;
+    li {
+      list-style: none;
+      text-align: right;
+    }
+  }
+  h1 {
+    letter-spacing: pxToRem(3px);
+    a {
+      text-decoration: none;
+    }
+    @media print {
+      color: #990003;
+    }
+  }
+  p {
+    @extend h2;
+    letter-spacing: pxToRem(1px);
+  }
+  @include leader(1, $base-font-size, margin);
+  @include trailer(1, $base-font-size, margin);
+  @include trailer(1, $base-font-size, padding);
+}

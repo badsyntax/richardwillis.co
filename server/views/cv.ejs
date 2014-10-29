@@ -1,30 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><%= title %></title>
-    <meta
-      name="description"
-      content="Personal Site of Richard Willis, Freelance Web Developer" />
-    <% stylesheets.forEach(function(stylesheet) { %>
-    <link rel="stylesheet" href="<%=stylesheet%>" />
-    <% }); %>
-  </head>
+<% include partials/head %>
   <body>
     <div class="container">
-      <header class="header">
-        <div class="title">
-          <h1>Richard Willis</h1>
-          <h2>Freelance Web Developer</h2>
-        </div>
-        <ul class="contact">
-          <li><%- link_to_if(showLinks, 'richard@proxima-web.com', 'mailto:richard@proxima-web.com') %></li>
-          <li><%- link_to_if(showLinks, 'richardwillis.co', 'http://richardwillis.co') %></li>
-          <li>07954216809</li>
-          <li>London, UK</li>
-        </ul>
-      </header>
+      <% include partials/header %>
       <section class="section profile">
         <h2>Profile</h2>
         <div class="content-block">
@@ -37,8 +14,8 @@
         <h2>Career Objective</h2>
         <div class="content-block">
           <p>
-            A Javascript developer working with the latest technologies to create useful and accessible
-            web applications.
+            A Javascript developer working on exciting projects using the latest technologies to create useful and accessible
+            web applications, preferably for a start-up or for a small agency in London.
           </p>
         </div>
       </section>
@@ -88,6 +65,7 @@
           <h3>Front-end Development</h3>
           <ul>
             <li>jQuery</li>
+            <li>KnockoutJS</li>
             <li>AngularJS</li>
             <li>OOP / MVC / MVVM</li>
             <li>Compass / Foundation / Susy / Bootstrap</li>
@@ -344,7 +322,7 @@
           <%- link_to_if(showLinks, 'richardwillis.co', 'http://richardwillis.co') %> -
           07954216809
         </p>
-        <p>Last Updated: </p>
+        <p>Last Updated: <%= lastUpdated %> <span class="no-print">- <a href="/cv/download">Download this CV</a></span></p>
       </footer>
     </div>
   </body>

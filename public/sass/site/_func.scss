@@ -1,3 +1,0 @@
-@function pxToRem($pixels){
-  @return ($pixels / $base-font-size) * 1rem;
-}

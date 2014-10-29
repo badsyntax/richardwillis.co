@@ -1,0 +1,13 @@
+@include border-box-sizing;
+
+body {
+  background: $body-bg;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  margin: 0;
+  @media print {
+    background: #fff;
+    margin: 0;
+  }
+}
