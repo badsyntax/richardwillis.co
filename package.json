@@ -8,8 +8,10 @@
   "author": "Richard Willis",
   "license": "MIT",
   "scripts": {
+    "preinstall": "bundle install --path vendor/bundle",
     "prestart": "npm install",
     "prestart-dev": "npm install",
+    "prebuild": "npm install",
     "start": "NODE_ENV=production node server",
     "start-staging": "NODE_ENV=staging node server",
     "start-dev": "NODE_ENV=development node server",

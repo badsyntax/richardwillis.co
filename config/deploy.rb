@@ -49,16 +49,6 @@ namespace :deploy do
     end
   end
 
-  desc "Restart the services"
-  task :restart_services do
-    on roles(:all) do |host|
-      within release_path do
-        execute "bin/services-stop.sh", "#{fetch(:environment)}"
-        execute "bin/services-start.sh", "#{fetch(:environment)}"
-      end
-    end
-  end
-
   desc "Build the project files"
   task :build do
     on roles(:all) do |host|
@@ -67,6 +57,8 @@ namespace :deploy do
       end
     end
   end
+
+  after :deploy, :build
 
   desc 'Restart application'
   task :restart do
@@ -79,8 +71,6 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-
-  after :deploy, :restart, :build
 
   after :publishing, :restart
 
