@@ -25,7 +25,7 @@ page.onError = function (msg, trace) {
 };
 
 page.viewportSize = {
-  width: 600,
+  width: 1024,
   height: 600
 };
 
