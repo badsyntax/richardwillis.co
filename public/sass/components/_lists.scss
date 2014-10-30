@@ -1,5 +1,7 @@
 ul {
   &:last-child {
-    margin-bottom: 0;
+    @include breakpoint($breakpoint-width) {
+      margin-bottom: 0;
+    }
   }
 }

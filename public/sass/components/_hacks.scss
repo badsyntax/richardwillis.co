@@ -1,0 +1,9 @@
+/* Prevent Skype from formatting the numbers */
+
+span.skype_pnh_container {
+  display: none !important;
+}
+
+span.skype_pnh_print_container {
+  display: inline !important;
+}

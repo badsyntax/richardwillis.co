@@ -28,6 +28,9 @@ $susy: (
   )
 );
 
+// Breakpoint settings
+$breakpoint-width: 960px;
+
 // --------
 // Compass Vertical Rhythm Settings
 // --------
@@ -43,11 +46,10 @@ $base-font-family: Georgia, Garamond, "Times New Roman", Times, serif;
 $base-font-weight: 400;
 $base-font-color: #444;
 
-
 $h1-font-size: 3.7 * $base-font-size;
 $h2-font-size: 1.5 * $base-font-size;
 $h3-font-size: 1.2 * $base-font-size;
 $h4-font-size: 1.2 * $base-font-size;
 $h5-font-size: 1 * $base-font-size;
 
-$body-bg: #fff inline-image("body-bg.png") repeat fixed;
+$body-bg: #393939 inline-image("body-bg.png") repeat fixed;

@@ -8,6 +8,7 @@
   "author": "Richard Willis",
   "license": "MIT",
   "scripts": {
+    "postinstall": "bundle install --path vendor/bundle",
     "prestart": "npm install && (forever stop production || true)",
     "prestart-dev": "npm install && (forever stop dev || true)",
     "prestart-staging": "npm install && (forever stop staging || true)",
@@ -18,6 +19,7 @@
     "pdf": "phantomjs server/tools/generate-pdf.js http://richardwillis.co/cv/pdf",
     "pdf-staging": "phantomjs server/tools/generate-pdf.js http://staging.richardwillis.co/cv/pdf",
     "pdf-dev": "phantomjs server/tools/generate-pdf.js http://dev.richardwillis.co.local/cv/pdf",
+    "prewatch": "npm install",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",
     "compile": "bundle exec compass compile -c config/compass.rb",
     "build": "npm run compile && npm run pdf",

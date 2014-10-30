@@ -1,31 +1,45 @@
 .header {
-  @include clearfix;
-  .title {
-    @include span(8 of 12);
-  }
-  .contact {
-    @include span(4 of 12 last);
-    @include leader(0.8, $base-font-size, margin);
-    padding: 0;
-    li {
-      list-style: none;
-      text-align: right;
+  &.main {
+    @include clearfix;
+    @include leader(1, $base-font-size, margin);
+    @include trailer(1, $base-font-size, margin);
+    @include trailer(1, $base-font-size, padding);
+    .title {
+      @include breakpoint($breakpoint-width) {
+        @include span(8 of 12);
+      }
+    }
+    .contact {
+      @include breakpoint($breakpoint-width) {
+        @include span(4 of 12 last);
+      }
+      @include leader(0.8, $base-font-size, margin);
+      padding: 0;
+      li {
+        list-style: none;
+        @include breakpoint($breakpoint-width) {
+          text-align: right;
+        }
+      }
+    }
+    h1 {
+      letter-spacing: pxToRem(3px);
+      a {
+        text-decoration: none;
+      }
+      @media print {
+        color: #990003;
+      }
+    }
+    p {
+      @include adjust-font-size-to($h2-font-size);
+      @include trailer(0);
+      @include leader(0);
+      color: #333;
+      font-style: italic;
+      font-weight: normal;
+      letter-spacing: pxToRem(1px);
+      text-transform: uppercase;
     }
   }
-  h1 {
-    letter-spacing: pxToRem(3px);
-    a {
-      text-decoration: none;
-    }
-    @media print {
-      color: #990003;
-    }
-  }
-  p {
-    @extend h2;
-    letter-spacing: pxToRem(1px);
-  }
-  @include leader(1, $base-font-size, margin);
-  @include trailer(1, $base-font-size, margin);
-  @include trailer(1, $base-font-size, padding);
 }

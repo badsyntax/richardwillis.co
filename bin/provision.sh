@@ -21,6 +21,8 @@ apt-get install -y python-software-properties
 add-apt-repository -y "deb http://gb.archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe multiverse"
 # Add node.js repo
 add-apt-repository -y ppa:chris-lea/node.js
+# Add nginx repo
+add-apt-repository ppa:nginx/stable
 
 apt-get update && apt-get upgrade -y
 
