@@ -5,19 +5,19 @@
     @include trailer(1, $base-font-size, margin);
     @include trailer(1, $base-font-size, padding);
     .title {
-      @include breakpoint($breakpoint-width) {
+      @include breakpoint($breakpoint-medium-width) {
         @include span(8 of 12);
       }
     }
     .contact {
-      @include breakpoint($breakpoint-width) {
+      @include breakpoint($breakpoint-medium-width) {
         @include span(4 of 12 last);
       }
       @include leader(0.8, $base-font-size, margin);
       padding: 0;
       li {
         list-style: none;
-        @include breakpoint($breakpoint-width) {
+        @include breakpoint($breakpoint-medium-width) {
           text-align: right;
         }
       }

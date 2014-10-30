@@ -6,7 +6,13 @@
   border: solid #666;
   margin-bottom: 70px;
   margin-top: 70px;
-  padding: 10px 60px;
+  padding: 10px 20px;
+  @include breakpoint($breakpoint-small-width) {
+    padding: 10px 40px;
+  }
+  @include breakpoint($breakpoint-medium-width) {
+    padding: 10px 60px;
+  }
   @media print {
     @include box-shadow(none);
     background: #ffffff;
@@ -25,19 +31,19 @@
   border-top: 1px solid #ccc;
   #{headings(5)} {
     @include trailer(1);
-    @include breakpoint($breakpoint-width) {
+    @include breakpoint($breakpoint-medium-width) {
       @include trailer(0);
     }
   }
   h2 {
     @include adjust-font-size-to($h2-font-size, 1.4);
-    @include breakpoint($breakpoint-width) {
+    @include breakpoint($breakpoint-medium-width) {
       @include span(3 of 12);
       @include trailer(0);
     }
   }
   .content-block {
-    @include breakpoint($breakpoint-width) {
+    @include breakpoint($breakpoint-medium-width) {
       @include span(9 of 12 last);
     }
     h3 {
@@ -60,7 +66,7 @@
   }
   &.skills, &.frameworks {
     .content-block {
-      @include breakpoint($breakpoint-width) {
+      @include breakpoint($breakpoint-medium-width) {
         @include span(3 of 12);
         &:last-child {
           @include span(3 of 12 last);
