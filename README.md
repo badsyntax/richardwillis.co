@@ -4,8 +4,10 @@ My personal site.
 
 ## Running the project for development
 
+### Install VirtualBox
+
 Install virtualbox, any version higher than 4.3.10. Things will not work with
-4.3.10 due to [https://www.virtualbox.org/ticket/12879](a bug) with this version:
+4.3.10 due to [a bug](https://www.virtualbox.org/ticket/12879) with that version.
 
 On Ubuntu host:
 
@@ -15,11 +17,15 @@ sudo apt-get update
 sudo apt-get install virtualbox-4.3
 ```
 
-Then install Vagrant, and the vagrant-vbguest plugin to ensure vagrant guest is up-to-date:
+### Install Vagrant
+
+Install Vagrant, and the vagrant-vbguest plugin to ensure vagrant guest is up-to-date:
 
 ```
 vagrant plugin install vagrant-vbguest
 ```
+
+### Run the project
 
 Run `vagrant up` to provision the development environment.
 
@@ -48,7 +54,7 @@ echo "192.168.50.4 richardwillis.co.local staging.richardwillis.co.local dev.ric
 
 View the wiki for instructions.
 
-# Deploying the application
+## Deploying the application
 
 Although continuous integration has been setup through Jenkins, you can still manually
 deploy as follows.
