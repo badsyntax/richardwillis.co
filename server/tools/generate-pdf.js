@@ -5,7 +5,12 @@
 
 var system = require('system');
 var args = system.args;
-var port = args[1];
+var url = args[1];
+
+if (!url) {
+  console.error('Please specify URL as first argument.')
+  phantom.exit();
+}
 
 var webPage = require('webpage');
 var page = webPage.create();
@@ -57,10 +62,10 @@ page.paperSize = {
   }
 };
 
-page.open('http://localhost:'+port+'/cv/pdf', function open(status) {
+page.open(url, function open(status) {
 
   if (status !== 'success') {
-    console.error('Unable to open page for PDF generation! Perhaps node server has not started?');
+    console.error('Unable to open page for PDF generation!');
     phantom.exit();
     return;
   }
@@ -74,10 +79,14 @@ page.open('http://localhost:'+port+'/cv/pdf', function open(status) {
     });
   });
 
-  page.render('public/downloads/richard-willis-cv.pdf', {
+  var pdfPath = 'public/downloads/richard-willis-cv.pdf';
+
+  page.render(pdfPath, {
     format: 'pdf',
     quality: '100'
   });
+
+  console.log('Generated PDF at path: ' + pdfPath);
 
   phantom.exit();
 });

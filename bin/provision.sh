@@ -31,6 +31,8 @@ gem install --no-ri --no-rdoc bundler
 
 if [ "$IS_VAGRANT" -eq 1 ]; then
 
+  echo "172.0.0.1 richardwillis.co.local staging.richardwillis.co.local dev.richardwillis.co.local" | sudo tee --append /etc/hosts
+
   echo "Setting up Nginx..."
   ln -s /var/www/config/nginx/local/richardwillis.co.local.conf /etc/nginx/sites-enabled/
   ln -s /var/www/config/nginx/local/staging.richardwillis.co.local.conf /etc/nginx/sites-enabled/
