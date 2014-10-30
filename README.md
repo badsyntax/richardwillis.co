@@ -15,7 +15,7 @@ Then install Vagrant, and the vagrant-vbguest plugin to ensure vagrant guest is 
 
 ```
 vagrant plugin install vagrant-vbguest
-```l
+```
 
 Run `vagrant up` to provision the development environment.
 
@@ -40,31 +40,6 @@ echo "192.168.50.4 richardwillis.co.local staging.richardwillis.co.local dev.ric
 * Navigate to http://staging.richardwillis.co.local/ to view the application in staging mode.
 * Navigate to http://richardwillis.co.local/ to view the application in prod mode.
 
-If you run `vagrant halt && vagrant up` then you'll need to manually restart
-supervisor.
-
-```
-vagrant ssh
-sudo /var/www/bin/services-stop.sh
-sudo /var/www/bin/services-start.sh
-```
-
-### Development services
-
-Services are managed by supervisor and are started when the VM is provisioned.
-
-Add/adjust services in the `supervisord.conf` file in the root of the project directory.
-
-Default services are as follows:
-
-* A node web server
-* compass watcher (for compiling sass)
-
-## Development workflow
-
-There's no need to manually start any services, or to manually compile anything.
-Simply change the source files in the `public/` directory.
-
 ## Production environment setup
 
 View the wiki for instructions.
@@ -74,7 +49,7 @@ View the wiki for instructions.
 Although continuous integration has been setup through Jenkins, you can still manually
 deploy as follows.
 
-We will be deploying the application from the host machine and NOT from within the Vagrant VM.
+(We will be deploying the application from the host machine and NOT from within the Vagrant VM.)
 
 To begin, ensure you have ruby-dev and bundler installed on your local machine:
 
