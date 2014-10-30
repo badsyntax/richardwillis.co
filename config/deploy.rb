@@ -52,7 +52,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:all), in: :sequence do |host|
-      within release_path do
+      within current_path do
         execute "npm", "run", "#{fetch(:start_script)}"
       end
       # Your restart mechanism here, for example:
@@ -65,7 +65,7 @@ namespace :deploy do
   desc "Build the project files"
   task :build do
     on roles(:all) do |host|
-      within release_path do
+      within current_path do
         execute "npm", "run", "#{fetch(:build_script)}"
       end
     end
