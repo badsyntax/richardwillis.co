@@ -12,7 +12,8 @@ var viewData = {
   title: 'Richard Willis - Freelance Web Developer',
   stylesheets: ['/css/style.css?v='+revision],
   showLinks: true,
-  revision: revision
+  analtics: true,
+  revision: revision,
 };
 
 /* GET Home */
@@ -43,7 +44,8 @@ router.get('/cv/pdf', function(req, res) {
   res.render('cv', _.extend({}, viewData, {
     showLinks: false,
     lastUpdated: cvLastUpdated,
-    pageClass: 'cv'
+    pageClass: 'cv',
+    analtics: false
   }));
 });
 
