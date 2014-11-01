@@ -5,12 +5,14 @@ var _ = require('lodash');
 var router = express.Router();
 
 var stats = fs.statSync('./server/views/cv.ejs');
-var lastUpdated = moment(new Date(stats.mtime)).format('Do MMMM YYYY');
+var cvLastUpdated = moment(new Date(stats.mtime)).format('Do MMMM YYYY');
+var revision = fs.readFileSync('./REVISION', 'utf8') || '';
 
 var viewData = {
   title: 'Richard Willis - Freelance Web Developer',
-  stylesheets: ['/css/style.css'],
-  showLinks: true
+  stylesheets: ['/css/style.css?v='+revision],
+  showLinks: true,
+  revision: revision
 };
 
 /* GET Home */
@@ -31,7 +33,7 @@ router.get('/showcase', function(req, res) {
 /* GET CV */
 router.get('/cv', function(req, res) {
   res.render('cv', _.extend({}, viewData, {
-    lastUpdated: lastUpdated,
+    lastUpdated: cvLastUpdated,
     pageClass: 'cv'
   }));
 });
@@ -40,7 +42,7 @@ router.get('/cv', function(req, res) {
 router.get('/cv/pdf', function(req, res) {
   res.render('cv', _.extend({}, viewData, {
     showLinks: false,
-    lastUpdated: lastUpdated,
+    lastUpdated: cvLastUpdated,
     pageClass: 'cv'
   }));
 });
