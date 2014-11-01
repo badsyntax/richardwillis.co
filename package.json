@@ -16,6 +16,7 @@
     "start": "NODE_ENV=production forever --append --uid \"production\" start server/index.js",
     "start-staging": "NODE_ENV=staging forever --append --uid \"staging\" start server/index.js",
     "start-dev": "NODE_ENV=development forever --append --uid \"dev\" start server/index.js",
+    "stop": "forever stopall",
     "pdf": "phantomjs server/tools/generate-pdf.js http://richardwillis.co/cv/pdf",
     "pdf-staging": "phantomjs server/tools/generate-pdf.js http://staging.richardwillis.co/cv/pdf",
     "pdf-dev": "phantomjs server/tools/generate-pdf.js http://dev.richardwillis.co.local/cv/pdf",
