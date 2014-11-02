@@ -4,6 +4,20 @@
 
       <% include partials/header %>
 
+      <section class="section intro">
+        <h2>Showcase</h2>
+        <p>
+          I've started writing code from a young age and still very much enjoy
+          programming and creatively solving problems. I'm always interested in
+          learning new approaches and perspectives in order to solve problems better.
+        </p>
+        <p>
+          I've mostly stuck with web technologies, as the Internet and sharing of
+          data and knowledge is something that interests me. I'm a huge Open Source
+          fan and take pleasure in sharing code and knowledge.
+        </p>
+      </section>
+
       <section class="section agency-work">
         <h2>Agency work</h2>
         <div class="content-block">
@@ -29,7 +43,21 @@
 
         <h2>Open source / personal work</h2>
 
-        <section class="content-block">
+        <section class="content-block filter" id="filter">
+          <h3>Filter by:</h3>
+          <p>
+            <a href="#" data-tag="python">Python</a> &ndash;
+            <a href="#" data-tag="js">JavaScript</a> &ndash;
+            <a href="#" data-tag="node">Node.js</a> &ndash;
+            <a href="#" data-tag="sass">Sass</a> &ndash;
+            <a href="#" data-tag="php">PHP</a> &ndash;
+            <a href="#" data-tag="tests">Unit Testing</a> &ndash;
+            <a href="#" data-tag="bash">BASH</a>  &ndash;
+            <a href="#" data-tag="all">All</a>
+          </p>
+        </section>
+
+        <section class="content-block" data-tags='["php","js"]'>
           <header class="header">
             <div class="overview">
               <h3>OpenEyes</h3>
@@ -41,7 +69,7 @@
             tasks when required.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["js"]'>
           <header class="header">
             <div class="overview">
               <h3>OpenEyes POC</h3>
@@ -52,7 +80,7 @@
           <p>A Single Page Application using AngularJS with a Scala HTTP REST API.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["python"]'>
           <header class="header">
             <div class="overview">
               <h3>SassBeautify</h3>
@@ -64,7 +92,7 @@
           the ability to run the <code>sass-convert</code> utility on your Sass code from within the editor.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["node"]'>
           <header class="header">
             <div class="overview">
               <h3>atom-sassbeautify</h3>
@@ -75,7 +103,7 @@
           <p>Similar to SassBeautify, but written in JavaScript for the Atom editor.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["node"]'>
           <header class="header">
             <div class="overview">
               <h3>badsyntax.co</h3>
@@ -87,7 +115,7 @@
           content.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["node"]'>
           <header class="header">
             <div class="overview">
               <h3>xen</h3>
@@ -100,7 +128,7 @@
           <p>It was a really fun project, and <a href="https://github.com/badsyntax/xen/tree/master/xen">I wrote some good code</a>, but eventually I gave up on the idea.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["node", "tests"]'>
           <header class="header">
             <div class="overview">
               <h3>staticx</h3>
@@ -113,7 +141,7 @@
           Unfortunately, it is not complete, but there is some good code in this project and is well tested.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["js", "tests"]'>
           <header class="header">
             <div class="overview">
               <h3>handlebars-form-helpers</h3>
@@ -125,7 +153,19 @@
           am unsure if anyone is actually using this plugin, but I have had zero bug reports.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["js", "node"]'>
+          <header class="header">
+            <div class="overview">
+              <h3>polymer-twitter</h3>
+              <p class="description">An example twitter stream built with polymer web components</p>
+              <p class="repo"><a href="https://github.com/badsyntax/polymer-twitter">https://github.com/badsyntax/polymer-twitter</a></p>
+            </div>
+          </header>
+          <p>This was my first introduction to Polymer and Web Components. It's an extremely simple app and simply shows a twitter stream,
+          using a Node.js API.</p>
+        </section>
+
+        <section class="content-block" data-tags='["php"]'>
           <header class="header">
             <div class="overview">
               <h3>Proxima CMS</h3>
@@ -136,7 +176,7 @@
           <p>A PHP CMS I built using the Kohana 3 framework, utilising concepts like HMVC, themes and components.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["js", "php", "tests"]'>
           <header class="header">
             <div class="overview">
               <h3>jquery-spellchecker</h3>
@@ -147,7 +187,7 @@
           <p>I wanted to improve on the spell-checking plugin that was packaged with TinyMCE.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["node"]'>
           <header class="header">
             <div class="overview">
               <h3>mp3-arrange</h3>
@@ -158,7 +198,7 @@
           <p>A small and well-tested node.js module that will arrange your MP3 collection.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["js", "php"]'>
           <header class="header">
             <div class="overview">
               <h3>map-route</h3>
@@ -169,7 +209,7 @@
           <p>A route planner, built using Knockout.js, Kohana, Google Maps, MySQl and OAuth2 (amongst other technologies).</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["bash"]'>
           <header class="header">
             <div class="overview">
               <h3>itunes-utils</h3>
@@ -180,7 +220,7 @@
           <p>A really old script I wrote to manage my itunes library, using Bash and AppleScript.</p>
         </section>
 
-        <section class="content-block">
+        <section class="content-block" data-tags='["sass"]'>
           <header class="header">
             <div class="overview">
               <h3>Sprite States</h3>
@@ -311,6 +351,62 @@
           provision the container exactly how I want it without having conflicting package versions.</p>
         </div>
       </section>
+
+      <script>
+        (function initFilter() {
+
+          var sections = get('section[data-tags]');
+
+          function get() {
+            return document.querySelectorAll.apply(document, arguments);
+          }
+
+          function on(elem, evt, fn) {
+            elem.addEventListener(evt, fn, false);
+          }
+
+          function addClass(elem, cls) {
+            elem.className = elem.className
+              .split(' ')
+              .concat(cls.split(' '))
+              .join(' ');
+          }
+
+          function removeClass(elem, cls) {
+            elem.className = elem.className
+              .split(' ')
+              .filter(function(c) {
+                return cls.split(' ').indexOf(c) === -1;
+              })
+              .join(' ');
+          }
+
+          function filter(tag) {
+            var last = -1;
+            for(var i = 0; i < sections.length; i++) {
+              var tags = JSON.parse(
+                sections[i].getAttribute('data-tags')
+              );
+              removeClass(sections[i], 'filter-hide filter-last');
+              if (tag === 'all' || tags.indexOf(tag) > -1) {
+                last = i;
+              } else {
+                addClass(sections[i], 'filter-hide');
+              }
+            }
+            if (last !== -1) {
+              addClass(sections[last], 'filter-last');
+            }
+          }
+
+          on(get('#filter')[0], 'click', function(e) {
+            var target = e.target;
+            if (target.nodeName !== 'A') return;
+            e.preventDefault();
+            filter(target.getAttribute('data-tag'))
+          });
+        }());
+      </script>
     </div>
   </body>
 </html>

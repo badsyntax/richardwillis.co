@@ -1,20 +1,45 @@
+%p {
+  @include adjust-font-size-to($base-font-size * 1.2, 1.2);
+  margin-bottom: pxToRem($base-font-size * 1.2);
+  margin-top: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%hide-offscreen {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
 .container {
   @include container(960px);
   @include box-shadow(0 1px 3px #000);
   background: #f5f5f5;
   border-width: 8px 0 2px 0;
   border: solid #666;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: {
+    bottom: 0;
+    top: 0;
+  };
   padding: 10px 20px;
   @include breakpoint($breakpoint-small-width) {
     padding: 10px 40px;
+    margin: {
+      top: 20px;
+      bottom: 20px;
+    };
   }
+
   @include breakpoint($breakpoint-medium-width) {
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin: {
+      top: 40px;
+      bottom: 40px;
+    };
     padding: 10px 60px;
   }
+
   @media print {
     @include box-shadow(none);
     background: #ffffff;
@@ -24,12 +49,16 @@
     padding: 0;
     width: auto;
   }
+  p {
+    @extend %p;
+  }
 }
 
 .section {
   @include clearfix;
   @include trailer(1.5, $base-font-size, padding);
   @include leader(1.5, $base-font-size, padding);
+  opacity: 1;
   border-top: 1px solid #ccc;
   #{headings(5)} {
     @include trailer(1);
@@ -48,22 +77,34 @@
     @include breakpoint($breakpoint-medium-width) {
       @include span(9 of 12 last);
     }
+
     h3 {
       @include adjust-font-size-to($h3-font-size, 1.2);
       color: #000;
     }
-    p {
-      @include adjust-font-size-to($base-font-size * 1.2, 1.2);
-      margin-bottom: pxToRem($base-font-size * 1.2);
-      &:first-child {
-        margin-top: 0;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
     .header {
       @include clearfix;
+    }
+    &.filter {
+      display: none;
+      html.js & {
+        display: block;
+      }
+      h3, p {
+        display: inline-block;
+        margin: 0;
+      }
+      h3 {
+        padding-right: .3rem;
+      }
+    }
+    &.filter-hide {
+      display: none;
+    }
+  }
+  &.intro {
+    h2 {
+      @extend %hide-offscreen;
     }
   }
   &.skills, &.frameworks {
@@ -91,7 +132,7 @@
       @include trailer(1.2, $base-font-size, padding);
       @include trailer(1.2, $base-font-size, margin);
       border-bottom: 1px solid #ccc;
-      &:last-child {
+      &:last-child, &.filter-last {
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;

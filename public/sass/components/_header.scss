@@ -1,9 +1,12 @@
 .header {
   &.main {
     @include clearfix;
-    @include leader(1, $base-font-size, margin);
-    @include trailer(1, $base-font-size, margin);
     @include trailer(1, $base-font-size, padding);
+    margin: 0;
+    @include breakpoint($breakpoint-small-width) {
+      @include leader(1, $base-font-size, margin);
+      @include trailer(1, $base-font-size, margin);
+    }
     .title {
       @include breakpoint($breakpoint-medium-width) {
         @include span(8 of 12);
@@ -24,6 +27,10 @@
     }
     h1 {
       letter-spacing: pxToRem(3px);
+      @include adjust-font-size-to($h1-font-size, 3);
+      @include breakpoint($breakpoint-small-width) {
+        @include adjust-font-size-to($h1-font-size);
+      }
       a {
         text-decoration: none;
       }
