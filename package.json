@@ -8,7 +8,7 @@
   "author": "Richard Willis",
   "license": "MIT",
   "scripts": {
-    "postinstall": "bundle install --path vendor/bundle",
+    "install-bundles": "bundle install --path vendor/bundle",
     "prestart": "npm install && (forever stop production || true)",
     "prestart-dev": "npm install && (forever stop dev || true)",
     "prestart-staging": "npm install && (forever stop staging || true)",

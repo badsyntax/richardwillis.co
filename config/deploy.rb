@@ -71,7 +71,7 @@ namespace :deploy do
     end
   end
 
-  after :restart, :build
+  after "bundler:install", :build
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
