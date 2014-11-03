@@ -144,6 +144,7 @@
     }
     .overview {
       @include span(8 of 12);
+      margin-bottom: 1.2rem;
     }
     .title {
       @include adjust-font-size-to($h4-font-size, 1.2);
