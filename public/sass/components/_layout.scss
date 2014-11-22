@@ -2,6 +2,7 @@
   @include adjust-font-size-to($base-font-size * 1.2, 1.2);
   margin-bottom: pxToRem($base-font-size * 1.2);
   margin-top: 0;
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -15,17 +16,17 @@
 
 .container {
   @include container(960px);
-  @include box-shadow(0 1px 3px #000);
-  background: #f5f5f5;
-  border-width: 8px 0 2px 0;
-  border: solid #666;
+
   margin: {
     bottom: 0;
     top: 0;
   };
   padding: 10px 20px;
+
   @include breakpoint($breakpoint-small-width) {
+    border: 1px solid #666;
     padding: 10px 40px;
+
     margin: {
       top: 20px;
       bottom: 20px;
@@ -49,6 +50,7 @@
     padding: 0;
     width: auto;
   }
+
   p {
     @extend %p;
   }
@@ -60,19 +62,24 @@
   @include leader(1.5, $base-font-size, padding);
   opacity: 1;
   border-top: 1px solid #ccc;
+
   #{headings(5)} {
     @include trailer(1);
+
     @include breakpoint($breakpoint-medium-width) {
       @include trailer(0);
     }
   }
+
   h2 {
     @include adjust-font-size-to($h2-font-size, 1.4);
+
     @include breakpoint($breakpoint-medium-width) {
       @include span(3 of 12);
       @include trailer(0);
     }
   }
+
   .content-block {
     @include breakpoint($breakpoint-medium-width) {
       @include span(9 of 12 last);
@@ -82,85 +89,104 @@
       @include adjust-font-size-to($h3-font-size, 1.2);
       color: #000;
     }
+
     .header {
       @include clearfix;
     }
+
     &.filter {
       display: none;
+
       html.js & {
         display: block;
       }
+
       h3, p {
         display: inline-block;
         margin: 0;
       }
+
       h3 {
         padding-right: .3rem;
       }
     }
+
     &.filter-hide {
       display: none;
     }
   }
+
   &.intro {
     h2 {
       @extend %hide-offscreen;
     }
   }
+
   &.skills, &.frameworks {
     .content-block {
       @include breakpoint($breakpoint-medium-width) {
         @include span(3 of 12);
+
         &:last-child {
           @include span(3 of 12 last);
         }
       }
     }
   }
+
   &.agency-work {
     ul {
       @include span(6 of 12);
       margin-top: 0;
       margin-bottom: 0;
+
       &:last-child {
         @include span(6 of 12 last);
       }
     }
   }
+
   &.list {
     .content-block {
       @include trailer(1.2, $base-font-size, padding);
       @include trailer(1.2, $base-font-size, margin);
       border-bottom: 1px solid #ccc;
+
       &:last-child, &.filter-last {
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;
       }
     }
+
     .header {
       margin: 0;
       padding: 0;
     }
+
     .overview {
       @include span(8 of 12);
       margin-bottom: 1.2rem;
     }
+
     .title {
       @include adjust-font-size-to($h4-font-size, 1.2);
       font-style: italic;
       margin: 0;
       text-transform: none;
     }
+
     .date {
       @include span(4 of 12 last);
       text-align: right;
     }
+
     &.projects {
       .overview {
         @include span(12 of 12);
         float: none;
       }
+
       .description, .repo {
         @extend .title;
       }
