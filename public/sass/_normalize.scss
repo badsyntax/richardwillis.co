@@ -2,7 +2,6 @@
 
 /* Customized by Richard Willis */
 
-
 // Variables and Imports
 //
 // If you have a base partial (or equivalent), you should move these lines to
@@ -20,21 +19,14 @@ $base-line-height: 24px !default;
 
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em, rem.
-$rhythm-unit: 'em' !default;
+$rhythm-unit: "em" !default;
 
 // This variable is a copy of the one used in Compass' support module.
 
 // Optional map of minimum browser versions to support. For example, to
 // remove support for IE 7 and earlier, set $browser-minimum-versions['ie']
 // to '8'.
-$browser-minimum-versions: (
-  'chrome':  null,
-  'firefox': null,
-  'ie':      null,
-  'safari':  null,
-  'opera':   null
-) !default;
-
+$browser-minimum-versions: ("chrome": null, "firefox": null, "ie": null, "safari": null, "opera": null) !default;
 
 // Set this to true to force CSS output to exactly match normalize.css.
 $strict-normalize: true !default;
@@ -43,10 +35,10 @@ $strict-normalize: true !default;
 $base-font-family: sans-serif !default;
 
 // The font sizes for h1-h6.
-$h1-font-size: 2    * $base-font-size !default;
-$h2-font-size: 1.5  * $base-font-size !default;
+$h1-font-size: 2 * $base-font-size !default;
+$h2-font-size: 1.5 * $base-font-size !default;
 $h3-font-size: 1.17 * $base-font-size !default;
-$h4-font-size: 1    * $base-font-size !default;
+$h4-font-size: 1 * $base-font-size !default;
 $h5-font-size: 0.83 * $base-font-size !default;
 $h6-font-size: 0.67 * $base-font-size !default;
 
@@ -58,7 +50,6 @@ $indent-amount: 40px !default;
 @import "compass/css3/box-sizing";
 @import "compass/typography/vertical_rhythm";
 
-
 /* Base
    ========================================================================== */
 
@@ -68,8 +59,7 @@ $indent-amount: 40px !default;
    * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
    * body `font-size` is set using `em` units.
    */
-
-  @include establish-baseline();
+  @include establish-baseline;
 }
 
 /**
@@ -122,7 +112,6 @@ summary {
   /**
    * Address `[hidden]` styling not present in IE 8/9/10.
    */
-
   [hidden] {
     display: none;
   }
@@ -135,7 +124,6 @@ summary {
   /**
    * Remove the gray background color from active links in IE 10.
    */
-
   a {
     background: transparent;
   }
@@ -149,7 +137,6 @@ a:active,
 a:hover {
   outline: 0;
 }
-
 
 /* Text-level semantics
    ========================================================================== */
@@ -171,32 +158,33 @@ strong {
 h1 {
   /* Set the font-size and line-height while keeping a proper vertical rhythm. */
   @if not $strict-normalize or support-legacy-browser(ie, "7") {
-    @include adjust-font-size-to( $h1-font-size );
+    @include adjust-font-size-to($h1-font-size);
   }
+
   @else {
-    font-size: if($rhythm-unit == "px", $h1-font-size, ($h1-font-size / $base-font-size)#{$rhythm-unit});
+    font-size: if($rhythm-unit == "px", $h1-font-size, $h1-font-size / $base-font-size#{$rhythm-unit});
   }
 }
 
 @if not $strict-normalize or support-legacy-browser(ie, "7") {
   h2 {
-    @include adjust-font-size-to( $h2-font-size );
+    @include adjust-font-size-to($h2-font-size);
   }
 
   h3 {
-    @include adjust-font-size-to( $h3-font-size );
+    @include adjust-font-size-to($h3-font-size);
   }
 
   h4 {
-    @include adjust-font-size-to( $h4-font-size );
+    @include adjust-font-size-to($h4-font-size);
   }
 
   h5 {
-    @include adjust-font-size-to( $h5-font-size );
+    @include adjust-font-size-to($h5-font-size);
   }
 
   h6 {
-    @include adjust-font-size-to( $h6-font-size );
+    @include adjust-font-size-to($h6-font-size);
   }
 }
 
@@ -208,7 +196,6 @@ h1 {
   /**
    * Set 1 unit of vertical rhythm on the top and bottom margin.
    */
-
   p,
   pre {
     margin: rhythm(1) 0;
@@ -226,11 +213,9 @@ small {
 @if not $strict-normalize or support-legacy-browser(ie, "7") {
   /* Lists
      ========================================================================== */
-
   /**
    * Address margins set differently in IE 6/7.
    */
-
   dl,
   menu,
   ol,
@@ -242,7 +227,6 @@ small {
     /**
      * Turn off margins on nested lists.
      */
-
     ol,
     ul {
       ol,
@@ -259,7 +243,6 @@ small {
   /**
    * Address paddings set differently in IE 6/7.
    */
-
   menu,
   ol,
   ul {
@@ -274,9 +257,9 @@ small {
   /**
    * Remove border when inside `a` element in IE 8/9/10.
    */
-
   img {
     border: 0;
+
     @if support-legacy-browser(ie, "7") {
       /* Improve image quality when scaled in IE 7. */
       -ms-interpolation-mode: bicubic;

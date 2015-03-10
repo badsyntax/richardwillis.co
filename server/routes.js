@@ -6,7 +6,11 @@ var router = express.Router();
 
 var stats = fs.statSync('./server/views/cv.ejs');
 var cvLastUpdated = moment(new Date(stats.mtime)).format('Do MMMM YYYY');
-var revision = fs.readFileSync('./REVISION', 'utf8').trim() || '';
+var revision;
+
+try {
+  revision = fs.readFileSync('./REVISION', 'utf8').trim() || '';
+} catch(e) {}
 
 var viewData = {
   title: 'Richard Willis - Freelance Web Developer',

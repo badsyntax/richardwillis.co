@@ -13,10 +13,16 @@ h2 {
 
 a {
   color: #990003;
+  transition: color 0.2s ease-in-out;
+
   &[href] {
     @media print {
       text-decoration: none;
     }
+  }
+
+  &:hover {
+    color: #5C0002;
   }
 }
 

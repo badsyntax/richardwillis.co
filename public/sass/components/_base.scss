@@ -1,9 +1,5 @@
 @include border-box-sizing;
 
-html {
-  background: $body-bg;
-}
-
 html, body {
   height: 100%;
 }
@@ -13,12 +9,15 @@ body {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   margin: 0;
+
   @include breakpoint($breakpoint-small-width) {
     margin: 0 20px;
   }
+
   @include breakpoint($breakpoint-medium-width) {
     margin: 0 40px;
   }
+
   @media print {
     background: #fff;
     margin: 0;
