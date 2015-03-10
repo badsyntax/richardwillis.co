@@ -25,7 +25,7 @@ add-apt-repository ppa:nginx/stable
 
 apt-get update && apt-get upgrade -y
 
-apt-get install -y git build-essential nodejs ttf-mscorefonts-installer nginx
+apt-get install -y ruby-dev git build-essential nodejs ttf-mscorefonts-installer nginx
 apt-get autoremove -y
 gem install --no-ri --no-rdoc bundler
 
