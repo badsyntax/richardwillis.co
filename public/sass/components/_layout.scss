@@ -17,27 +17,14 @@
 .container {
   @include container(960px);
 
-  margin: {
-    bottom: 0;
-    top: 0;
-  };
   padding: 10px 20px;
 
   @include breakpoint($breakpoint-small-width) {
     border: 1px solid #666;
     padding: 10px 40px;
-
-    margin: {
-      top: 20px;
-      bottom: 20px;
-    };
   }
 
   @include breakpoint($breakpoint-medium-width) {
-    margin: {
-      top: 40px;
-      bottom: 40px;
-    };
     padding: 10px 60px;
   }
 

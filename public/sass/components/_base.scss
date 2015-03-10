@@ -1,7 +1,7 @@
 @include border-box-sizing;
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -11,11 +11,11 @@ body {
   margin: 0;
 
   @include breakpoint($breakpoint-small-width) {
-    margin: 0 20px;
+    padding: 20px;
   }
 
   @include breakpoint($breakpoint-medium-width) {
-    margin: 0 40px;
+    padding: 40px;
   }
 
   @media print {
