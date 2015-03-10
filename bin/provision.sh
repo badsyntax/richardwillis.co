@@ -14,8 +14,7 @@ fi
 debconf-set-selections <<< 'ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true'
 
 echo "Installing packages and updating system..."
-apt-get remove -y ruby1.8
-apt-get install -y python-software-properties
+apt-get install -y software-properties-common
 
 # Enable multiverse so we can install ttf-mscorefonts-installer
 add-apt-repository -y "deb http://gb.archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe multiverse"
@@ -26,9 +25,8 @@ add-apt-repository ppa:nginx/stable
 
 apt-get update && apt-get upgrade -y
 
-apt-get install -y git python-setuptools build-essential nodejs ruby1.9.3 ttf-mscorefonts-installer nginx
+apt-get install -y git python-setuptools build-essential nodejs ttf-mscorefonts-installer nginx
 apt-get autoremove -y
-easy_install supervisor
 gem install --no-ri --no-rdoc bundler
 
 if [ "$IS_VAGRANT" -eq 1 ]; then
