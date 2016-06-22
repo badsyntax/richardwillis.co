@@ -4,6 +4,12 @@ html, body {
   min-height: 100%;
 }
 
+html {
+  @media print {
+    font-size: 10px;
+  }
+}
+
 body {
   color: $base-font-color;
   font-family: $base-font-family;
