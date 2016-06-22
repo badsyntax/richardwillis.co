@@ -15,8 +15,6 @@ if (!url) {
 var webPage = require('webpage');
 var page = webPage.create();
 
-page.zoomFactor = 0.8;
-
 page.onError = function (msg, trace) {
   console.log(msg);
   trace.forEach(function(item) {

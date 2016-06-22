@@ -4,10 +4,10 @@
 # Is Vagrant running this script?
 [ "$1" == '--vagrant' ] && IS_VAGRANT=1 || IS_VAGRANT=0
 
-if [ "$IS_VAGRANT" -eq 1 ]; then
+#if [ "$IS_VAGRANT" -eq 1 ]; then
   # Adjust apt mirrors for faster package downloads
-  sed -i "s/\/\/archive.ubuntu.com/\/\/gb.archive.ubuntu.com/g" /etc/apt/sources.list
-fi
+#  sed -i "s/\/\/archive.ubuntu.com/\/\/gb.archive.ubuntu.com/g" /etc/apt/sources.list
+#fi
 
 # We need to install fonts to render PDFs correctly.
 # Set default options for ttf-mscorefonts-installer package.
@@ -36,6 +36,8 @@ if [ "$IS_VAGRANT" -eq 1 ]; then
   ln -s /var/www/config/nginx/local/dev.richardwillis.co.local.conf /etc/nginx/sites-enabled/
   ln -s /var/www/config/nginx/local/staging.richardwillis.co.local.conf /etc/nginx/sites-enabled/
   service nginx restart
+
+  echo "127.0.0.1 richardwillis.co.local staging.richardwillis.co.local dev.richardwillis.co.local" | sudo tee --append /etc/hosts
 
   echo "Installing project packages..."
   cd /var/www

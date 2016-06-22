@@ -17,6 +17,8 @@ var viewData = {
   stylesheets: ['/css/style.css?v='+revision],
   showLinks: true,
   analtics: true,
+  number: '0034 692939674',
+  location: 'Barcelona, Spain',
   revision: revision,
 };
 

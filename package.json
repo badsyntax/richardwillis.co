@@ -21,6 +21,7 @@
     "stop": "forever stopall",
     "pdf": "phantomjs server/tools/generate-pdf.js http://richardwillis.co/cv/pdf",
     "pdf-staging": "phantomjs server/tools/generate-pdf.js http://staging.richardwillis.co/cv/pdf",
+    "pdf-local": "phantomjs server/tools/generate-pdf.js http://richardwillis.co.local/cv/pdf",
     "pdf-dev": "phantomjs server/tools/generate-pdf.js http://dev.richardwillis.co.local/cv/pdf",
     "prewatch": "npm install",
     "watch": "bundle exec compass watch --poll -c config/compass.rb",
@@ -29,8 +30,7 @@
     "build-staging": "npm run compile && npm run pdf-staging",
     "build-dev": "npm run compile && npm run pdf-dev"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "ejs": "^1.0.0",
     "express": "^4.10.0",
@@ -39,6 +39,6 @@
     "lodash": "^2.4.1",
     "moment": "^2.8.3",
     "nconf": "^0.6.9",
-    "phantomjs": "^1.9.12"
+    "phantomjs-prebuilt": "^2.1.7"
   }
 }
