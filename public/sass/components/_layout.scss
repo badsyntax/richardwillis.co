@@ -51,10 +51,6 @@
 
   #{headings(5)} {
     @include trailer(1);
-
-    @include breakpoint($breakpoint-medium-width) {
-      @include trailer(0);
-    }
   }
 
   h2 {
@@ -70,6 +66,13 @@
 
     @include breakpoint($breakpoint-medium-width) {
       @include span(9 of 12 last);
+    }
+
+    &:not(:last-child) {
+      @include trailer(1);
+      @include breakpoint($breakpoint-medium-width) {
+        @include trailer(0);
+      }
     }
 
     h3 {
